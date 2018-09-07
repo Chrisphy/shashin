@@ -14,8 +14,8 @@ namespace shashin
             InitializeComponent();
 
 
-            //MainPage = new MainPage();
-            MainPage = new PasscodePage();
+            MainPage = new MainPage();
+            //MainPage = new PasscodePage();
         }
 
         protected override void OnStart()
