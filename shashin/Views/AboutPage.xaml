@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="shashin.Views.AboutPage" xmlns:vm="clr-namespace:shashin.ViewModels" Title="{Binding Title}">
     <ContentPage.BindingContext>
-        <vm:AboutViewModel />
+        <vm:unsplashViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -12,7 +12,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    
+
    <Grid RowSpacing="10">
       <Grid.RowDefinitions>
 
@@ -22,7 +22,7 @@
 
       </Grid.ColumnDefinitions>
 
-     <Image Grid.Row="0" Grid.Column="0" Source="https://source.unsplash.com/1600x900/?japan" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+     <Image x:Name="myImg" Grid.Row="0" Grid.Column="0" Source="{Binding randomPhoto.Urls.Full}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
      <Image Grid.Row="0" Grid.Column="1" Source="https://source.unsplash.com/1600x900/?nature,water" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
      <Image Grid.Row="1" Grid.Column="0" Source="https://source.unsplash.com/1600x900/?fire" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
      <Image Grid.Row="1" Grid.Column="1" Source="https://source.unsplash.com/1600x900/?mountain" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>

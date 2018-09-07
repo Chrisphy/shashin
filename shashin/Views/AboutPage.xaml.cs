@@ -12,5 +12,6 @@ namespace shashin.Views
         {
             InitializeComponent();
         }
+
     }
 }
