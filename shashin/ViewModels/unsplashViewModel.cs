@@ -10,11 +10,10 @@ namespace shashin.ViewModels
 {
     public class unsplashViewModel : INotifyPropertyChanged
     {
-        PhotoManager photoManager = new PhotoManager();
-
+        UnsplasharpClient client = new UnsplasharpClient("93123f0db401f8367e061a60e9b0976b9bc9c3cafe5133f344bba4010c97a4de",
+                                                         "ec8401ec0727226a41f9fea4ef184c10f7efef4b009ee910dbf3ca386a");
         Photo _randomPhoto;
-
-        public Photo RandomPhoto
+        public Photo randomPhoto
         {
             get { return _randomPhoto; }
             set
@@ -22,11 +21,10 @@ namespace shashin.ViewModels
                 _randomPhoto = value;
                 if (PropertyChanged != null)
                 {
-                    PropertyChanged(this, new PropertyChangedEventArgs("RandomPhoto"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("randomPhoto"));
                 }
             }
         }
-
         public unsplashViewModel()
         {
             FetchDataAsync();
@@ -34,9 +32,7 @@ namespace shashin.ViewModels
 
         public async Task FetchDataAsync()
         {
-            Photo photo = await photoManager.RandomPhoto();
-            RandomPhoto = photo;
-            //Log.Debug.WriteLine(RandomPhoto.Urls.Small);
+            randomPhoto = await client.GetRandomPhoto();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
