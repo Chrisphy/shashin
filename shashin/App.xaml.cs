@@ -15,7 +15,7 @@ namespace shashin
 
 
             //MainPage = new MainPage();
-            MainPage = new PasscodePage();
+            Current.MainPage = new PasscodePage();
         }
 
         protected override void OnStart()

@@ -4,7 +4,8 @@
              x:Class="shashin.Views.PasscodePage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Enter Passcode Here!" Keyboard="Numeric" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+            <Label HeightRequest="300"/>
+            <Entry x:Name="EntryPasscode" Focused="EntryPasscode_Focused" Completed="EntryPasscode_Completed" PropertyChanged="EntryPasscode_PropertyChanged" Placeholder="Enter Passcode Here" Keyboard="Numeric" HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
