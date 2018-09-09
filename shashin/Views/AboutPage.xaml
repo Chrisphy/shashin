@@ -13,7 +13,7 @@
     </ContentPage.Resources>
 
 
-   <Grid RowSpacing="10">
+   <Grid RowSpacing="0" ColumnSpacing="0">
       <Grid.RowDefinitions>
 
        </Grid.RowDefinitions>
@@ -22,12 +22,11 @@
 
       </Grid.ColumnDefinitions>
 
-     <Image x:Name="myImg" Grid.Row="0" Grid.Column="0" Source="{Binding randomPhoto.Urls.Full}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-     <Image Grid.Row="0" Grid.Column="1" Source="https://source.unsplash.com/1600x900/?nature,water" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-     <Image Grid.Row="1" Grid.Column="0" Source="https://source.unsplash.com/1600x900/?fire" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-     <Image Grid.Row="1" Grid.Column="1" Source="https://source.unsplash.com/1600x900/?mountain" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-     <Image Grid.Row="2" Grid.Column="0" Source="https://source.unsplash.com/1600x900/?clothes" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-     <Image Grid.Row="2" Grid.Column="1" Source="https://source.unsplash.com/1600x900/?food" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+     <Image x:Name="myImg" Grid.Row="0" Grid.Column="0" Source="{Binding randomPhoto.Urls.Full}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Grid.ColumnSpan="2"/>
+     <Image Grid.Row="1" Grid.Column="0" Source="https://source.unsplash.com/1600x900/?nature,water" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+     <Image Grid.Row="1" Grid.Column="1" Source="https://source.unsplash.com/1600x900/?fire" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+     <Image Grid.Row="2" Grid.Column="0" Source="https://source.unsplash.com/1600x900/?mountain" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+     <Image Grid.Row="2" Grid.Column="1" Source="https://source.unsplash.com/1600x900/?clothes" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
 
     </Grid>
 </ContentPage>
