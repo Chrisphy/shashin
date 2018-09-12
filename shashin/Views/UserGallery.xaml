@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="shashin.Views.UserGallery" xmlns:vm="clr-namespace:shashin.ViewModels" Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:unsplashViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Page Level Resources: Compatibile with Xamarin Live Player -->
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+   <Grid RowSpacing="0" ColumnSpacing="0">
+      <Grid.RowDefinitions>
+
+       </Grid.RowDefinitions>
+        
+      <Grid.ColumnDefinitions>
+
+      </Grid.ColumnDefinitions>
+
+     <Image x:Name="myImg" Grid.Row="0" Grid.Column="0" Source="{Binding randomPhoto.Urls.Full}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Grid.ColumnSpan="2"/>
+     <Image Grid.Row="1" Grid.Column="0" Source="https://source.unsplash.com/1600x900/?nature,water" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+     <Image Grid.Row="1" Grid.Column="1" Source="https://source.unsplash.com/1600x900/?fire" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+     <Image Grid.Row="2" Grid.Column="0" Source="https://source.unsplash.com/1600x900/?mountain" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+     <Image Grid.Row="2" Grid.Column="1" Source="https://source.unsplash.com/1600x900/?clothes" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+
+    </Grid>
+</ContentPage>

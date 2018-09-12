@@ -9,7 +9,7 @@ namespace shashin.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "User Gallery";
 
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }
