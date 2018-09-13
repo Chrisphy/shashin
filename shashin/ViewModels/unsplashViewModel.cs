@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
@@ -11,9 +11,15 @@ namespace shashin.ViewModels
     public class unsplashViewModel : INotifyPropertyChanged
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 570a10abc9dbb3bd7195bb682582bafcc903e214
+=======
+
+=======
+>>>>>>> 6d53fea... Merging changes
+>>>>>>> e5843c9... Merging changes
         UnsplasharpClient client = new UnsplasharpClient("93123f0db401f8367e061a60e9b0976b9bc9c3cafe5133f344bba4010c97a4de",
                                                          "ec8401ec0727226a41f9fea4ef184c10f7efef4b009ee910dbf3ca386a");
         Photo _randomPhoto;
