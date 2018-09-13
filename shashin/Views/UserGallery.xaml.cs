@@ -6,9 +6,9 @@ using Xamarin.Forms.Xaml;
 namespace shashin.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AboutPage : ContentPage
+    public partial class UserGallery : ContentPage
     {
-        public AboutPage()
+        public UserGallery()
         {
             InitializeComponent();
         }
