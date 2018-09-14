@@ -8,7 +8,8 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:ItemsPage />
+                <views:unsplashPhotos/>
+                <!--<views:ItemsPage />-->
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Gallery">

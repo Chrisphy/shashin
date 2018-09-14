@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="shashin.Views.unsplashPhotos"
+             xmlns:local="clr-namespace:shashin.ViewModels; assembly=shashin">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.BindingContext>
+                <local:unsplashViewModel/>
+            </StackLayout.BindingContext>
+            <!--<Image x:Name="myImg" Source="{Binding randomPhoto.Urls.Raw}"></Image>
+            <Label Text=""/>-->
+            <!--<ListView x:Name="myList" ItemsSource="{Binding RootList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding title}" Detail="{Binding body}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            <StackLayout Orientation="Vertical">
+                <SearchBar x:Name="searchPhoto" Placeholder="Search"></SearchBar>
+                <!--<Button x:Name="btnSearch" Text="Search"/>-->
+            </StackLayout>
+
+            <ListView x:Name="myPhotoList" ItemsSource="{Binding ListPhoto}" HasUnevenRows="true" RowHeight="-1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <!--<StackLayout HorizontalOptions="FillAndExpand" Padding="10">-->
+                                <Image Aspect="AspectFill" Source="{Binding Urls.Regular}" />  
+                            <!--</StackLayout>-->
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Padding="5">
+                    <Button Text="Previous" HorizontalOptions="Start" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Padding="5">
+                    <Button Text="Next" HorizontalOptions="End" VerticalOptions="Center"/>    
+                </StackLayout>
+            </StackLayout>-->
+       </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
