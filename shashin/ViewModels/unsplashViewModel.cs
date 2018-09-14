@@ -5,33 +5,26 @@ using System.Threading.Tasks;
 using shashin.Data;
 using Unsplasharp;
 using Unsplasharp.Models;
+using System.Collections.Generic;
 
 namespace shashin.ViewModels
 {
     public class unsplashViewModel : INotifyPropertyChanged
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 570a10abc9dbb3bd7195bb682582bafcc903e214
-=======
+        UnsplasharpClient client = new UnsplasharpClient("b18240d07f00d99b6cb5e5c0041758c4008ba295c9bd6bed2c3a670abc28fcab",
+                                                                "228d690471d58d510538caccbd863c74dcd9495b03985b6ff36ac8b3cd2ec525");
+        List<Photo> _listPhoto;
 
-=======
->>>>>>> 6d53fea... Merging changes
->>>>>>> e5843c9... Merging changes
-        UnsplasharpClient client = new UnsplasharpClient("93123f0db401f8367e061a60e9b0976b9bc9c3cafe5133f344bba4010c97a4de",
-                                                         "ec8401ec0727226a41f9fea4ef184c10f7efef4b009ee910dbf3ca386a");
-        Photo _randomPhoto;
-        public Photo randomPhoto
+        public List<Photo> ListPhoto
         {
-            get { return _randomPhoto; }
+            get { return _listPhoto; }
             set
             {
-                _randomPhoto = value;
+                _listPhoto = value;
                 if (PropertyChanged != null)
                 {
-                    PropertyChanged(this, new PropertyChangedEventArgs("randomPhoto"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("ListPhoto"));
                 }
             }
         }
@@ -42,7 +35,10 @@ namespace shashin.ViewModels
 
         public async Task FetchDataAsync()
         {
-            randomPhoto = await client.GetRandomPhoto();
+            //ListPhoto = await client.SearchPhotos("mountains", page: 1, perPage: 20);
+            //List<Photo> tmpList = await client.GetRandomPhoto(5);//page: pageNumber, perPage: 5, orderBy: OrderBy.Popular);
+            //ListPhoto = new ObservableCollection<Photo>(tmpList);
+            ListPhoto = await client.ListPhotos(page: 1, perPage: 5);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
