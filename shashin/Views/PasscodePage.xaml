@@ -5,6 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label HeightRequest="300"/>
+            <Label x:Name="FirstTimePasscode" Text="Enter a new Passcode for first time use:" HorizontalOptions="CenterAndExpand"/>
             <Entry x:Name="EntryPasscode" Focused="EntryPasscode_Focused" Completed="EntryPasscode_Completed" PropertyChanged="EntryPasscode_PropertyChanged" Placeholder="Enter Passcode Here" Keyboard="Numeric" HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
