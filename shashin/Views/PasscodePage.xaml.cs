@@ -47,33 +47,40 @@ namespace shashin.Views
         }
         private async void EntryPasscode_Completed(object sender, EventArgs e)
         {
-            CF_Database = MTSql.Current.GetConnectionAsync("passcode.db");
-            List<DatabaseString> listResult;
-            try
+            if (EntryPasscode.Text.Length == 0 || EntryPasscode.Text == "" || EntryPasscode.Text == "Incorrect Passcode")
             {
-                var list = await CF_Database.Table<DatabaseString>().ToListAsync();
-                listResult = list;
-            }
-            catch (SQLiteException)
-            {
-                listResult = null;
-            }
-            if (listResult == null)
-            {
-                CF_Database.CreateTableAsync<DatabaseString>().Wait();
-                await CF_Database.InsertAsync(new DatabaseString { MyString = EntryPasscode.Text } );
-                App.Current.MainPage = new MainPage();
+                return;
             }
             else
             {
-                var list = await CF_Database.Table<DatabaseString>().ToListAsync();
-                if (EntryPasscode.Text == list[0].MyString)
+                CF_Database = MTSql.Current.GetConnectionAsync("passcode.db");
+                List<DatabaseString> listResult;
+                try
                 {
+                    var list = await CF_Database.Table<DatabaseString>().ToListAsync();
+                    listResult = list;
+                }
+                catch (SQLiteException)
+                {
+                    listResult = null;
+                }
+                if (listResult == null)
+                {
+                    CF_Database.CreateTableAsync<DatabaseString>().Wait();
+                    await CF_Database.InsertAsync(new DatabaseString { MyString = EntryPasscode.Text });
                     App.Current.MainPage = new MainPage();
                 }
                 else
                 {
-                    EntryPasscode.Text = "Incorrect Passcode";
+                    var list = await CF_Database.Table<DatabaseString>().ToListAsync();
+                    if (EntryPasscode.Text == list[0].MyString)
+                    {
+                        App.Current.MainPage = new MainPage();
+                    }
+                    else
+                    {
+                        EntryPasscode.Text = "Incorrect Passcode";
+                    }
                 }
             }
         }

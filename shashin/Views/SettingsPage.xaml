@@ -3,8 +3,8 @@
     <ContentPage.Content>
             <StackLayout>
 
-            <Entry Placeholder="Enter Passcode Here" Keyboard="Numeric" HorizontalOptions="CenterAndExpand"/>
-            <Button Text="Save" />
+            <Entry x:Name="NewPasscodeTxt" Placeholder="Enter Passcode Here" Keyboard="Numeric" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Save" Clicked="SaveBtn_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
