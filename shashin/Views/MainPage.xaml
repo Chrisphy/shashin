@@ -19,6 +19,16 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
+                <views:ItemsPage />
+            </x:Arguments>
+        </NavigationPage>
+                <NavigationPage Title="Inspiration">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_about.png" />
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
                 <views:UserGallery />
             </x:Arguments>
         </NavigationPage>

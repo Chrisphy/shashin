@@ -17,19 +17,15 @@ namespace shashin.Views
         {
             InitializeComponent();
 
-            Item = new Item
-            {
-                Text = "Item name",
-                Description = "This is an item description."
-            };
 
             BindingContext = this;
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+/*        async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "AddItem", Item);
             await Navigation.PopModalAsync();
         }
-    }
+*/
+}
 }

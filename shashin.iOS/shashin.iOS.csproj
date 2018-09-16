@@ -124,6 +124,7 @@
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\tab_settings.png" />
+    <BundleResource Include="Resources\Images\image1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -143,5 +144,8 @@
       <Project>{9D0459BD-9BC0-42B4-B22A-78ECBE6B22A8}</Project>
       <Name>shashin</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
   </ItemGroup>
 </Project>

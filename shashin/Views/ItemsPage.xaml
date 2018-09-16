@@ -11,9 +11,9 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+    <StackLayout>
 
-
-        <StackLayout>
+    <!--
             <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -26,6 +26,24 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+     -->
+
+            <Image Aspect="AspectFill" Source="Images/image1.png" />  
+
+
+      <!--      <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" HasUnevenRows="true" RowHeight="-1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                                <Image Aspect="AspectFill" Source="xamarin_logo@3x.png" />  
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            -->
+
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

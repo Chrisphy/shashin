@@ -24,14 +24,6 @@ namespace shashin.Views
         {
             InitializeComponent();
 
-            var item = new Item
-            {
-                Text = "Item 1",
-                Description = "This is an item description."
-            };
-
-            viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
         }
     }
 }
