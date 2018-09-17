@@ -20,7 +20,7 @@
                 <!--<Button x:Name="btnSearch" Text="Search"/>-->
             </StackLayout>
 
-            <ListView x:Name="myPhotoList" ItemsSource="{Binding ListPhoto}" HasUnevenRows="true" RowHeight="-1">
+            <ListView x:Name="myPhotoList" ItemsSource="{Binding ListPhoto}" HasUnevenRows="true" RowHeight="-1" ItemSelected="Handle_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="shashin.Views.unsplashPhotoDetails"
+    xmlns:local="clr-namespace:shashin.ViewModels; assembly=shashin">
+    <ContentPage.BindingContext>
+        <local:unsplashDetailsViewModel/>
+    </ContentPage.BindingContext>
+        <ContentPage.Content>
+            <ScrollView>
+                <StackLayout>
+                    <Image Source="{Binding RegularUrls}"/>
+                    <Label Text="Author:"/>
+                    <Label Text="{Binding UserName}"/>
+                    <Label Text="Description:"/>
+                    <Label Text="{Binding PhotoDescription}"/>
+                </StackLayout>
+            </ScrollView>
+        </ContentPage.Content>
+</ContentPage>
