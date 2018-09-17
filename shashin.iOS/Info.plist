@@ -34,5 +34,7 @@
 	<string>shashin</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Needed to store images.</string>
 </dict>
 </plist>

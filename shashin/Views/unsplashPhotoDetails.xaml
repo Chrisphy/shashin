@@ -7,11 +7,12 @@
         <ContentPage.Content>
             <ScrollView>
                 <StackLayout>
-                    <Image Source="{Binding RegularUrls}"/>
+                    <Image x:Name="imageSource" Source="{Binding RegularUrls}"/>
                     <Label Text="Author:"/>
                     <Label Text="{Binding UserName}"/>
                     <Label Text="Description:"/>
                     <Label Text="{Binding PhotoDescription}"/>
+                    <Button Text="Save" x:Name="saveButton" Clicked="saveImage" />
                 </StackLayout>
             </ScrollView>
         </ContentPage.Content>

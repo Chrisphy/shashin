@@ -28,7 +28,7 @@
             </ListView>
      -->
 
-            <Image Aspect="AspectFill" Source="Images/image1.png" />  
+            <Image Aspect="AspectFill" Source="{Binding Item.uri}" />  
 
 
       <!--      <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" HasUnevenRows="true" RowHeight="-1">

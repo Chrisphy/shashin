@@ -17,7 +17,7 @@ namespace shashin.Services
             items = new List<Item>();
             var mockItems = new List<Item>
             {
-                new Item { Id = Guid.NewGuid().ToString(), uri = "Images/image1.png" },
+                new Item { Id = Guid.NewGuid().ToString(), uri = "image1.png" },
             };
 
             foreach (var item in mockItems)

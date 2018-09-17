@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Plugin.CurrentActivity;
 
 namespace shashin.Droid
 {
@@ -21,6 +22,7 @@ namespace shashin.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+            CrossCurrentActivity.Current.Activity = this;
         }
     }
 }
