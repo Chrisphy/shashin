@@ -10,44 +10,124 @@ using Xamarin.Forms.Xaml;
 using shashin.Models;
 using shashin.Views;
 using shashin.ViewModels;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
+
 
 namespace shashin.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
 
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            takePhoto.Clicked += async (sender, args) =>
+            {
+
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    await DisplayAlert("No Camera", ":( No camera available.", "OK");
+                    return;
+                }
+
+                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    Directory = "Test",
+                    SaveToAlbum = true,
+                    CompressionQuality = 75,
+                    CustomPhotoSize = 50,
+                    PhotoSize = PhotoSize.MaxWidthHeight,
+                    MaxWidthHeight = 2000,
+                    DefaultCamera = CameraDevice.Front
+                });
+
+                if (file == null)
+                    return;
+
+                await DisplayAlert("File Location", file.Path, "OK");
+
+                image.Source = ImageSource.FromStream(() =>
+                {
+                    var stream = file.GetStream();
+                    file.Dispose();
+                    return stream;
+                });
+            };
+
+            pickPhoto.Clicked += async (sender, args) =>
+            {
+                if (!CrossMedia.Current.IsPickPhotoSupported)
+                {
+                    await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                    return;
+                }
+                var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                {
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+
+                });
+
+
+                if (file == null)
+                    return;
+
+                image.Source = ImageSource.FromStream(() =>
+                {
+                    var stream = file.GetStream();
+                    file.Dispose();
+                    return stream;
+                });
+            };
+
+            takeVideo.Clicked += async (sender, args) =>
+            {
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakeVideoSupported)
+                {
+                    await DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
+                    return;
+                }
+
+                var file = await CrossMedia.Current.TakeVideoAsync(new Plugin.Media.Abstractions.StoreVideoOptions
+                {
+                    Name = "video.mp4",
+                    Directory = "DefaultVideos",
+                });
+
+                if (file == null)
+                    return;
+
+                await DisplayAlert("Video Recorded", "Location: " + file.Path, "OK");
+
+                file.Dispose();
+            };
+
+            pickVideo.Clicked += async (sender, args) =>
+            {
+                if (!CrossMedia.Current.IsPickVideoSupported)
+                {
+                    await DisplayAlert("Videos Not Supported", ":( Permission not granted to videos.", "OK");
+                    return;
+                }
+                var file = await CrossMedia.Current.PickVideoAsync();
+
+                if (file == null)
+                    return;
+
+                await DisplayAlert("Video Selected", "Location: " + file.Path, "OK");
+                file.Dispose();
+            };
+
+        
+        
+        
+        
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            var item = args.SelectedItem as Item;
-            if (item == null)
-                return;
-
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
-            // Manually deselect item.
-            //ItemsListView.SelectedItem = null;
-        }
-
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
-        }
+      
     }
 }
