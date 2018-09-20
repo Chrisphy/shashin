@@ -1,4 +1,4 @@
-#SIT313 Group 
+#SIT313 Group 10
 # shashin
 Cross Platform Gallery Mobile Application 
 
