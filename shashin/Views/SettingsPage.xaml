@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="shashin.Views.SettingsPage">
     <ContentPage.Content>
-            <StackLayout>
-
+        <StackLayout>
             <Entry x:Name="NewPasscodeTxt" Placeholder="Enter Passcode Here" Keyboard="Numeric" HorizontalOptions="CenterAndExpand"/>
             <Button Text="Save" Clicked="SaveBtn_Clicked"/>
+            <Label Text="User Information"/>
+            <Label Text="Given Name"/>
+            <Entry x:Name="NewFirstNameTxt"/>
+            <Label Text="Family Name"/>
+            <Entry x:Name="NewLastNameTxt"/>
+            <Label Text="Gender"/>
+            <Entry x:Name="NewGenderTxt"/>
+            <Button Text="Save User Info" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
