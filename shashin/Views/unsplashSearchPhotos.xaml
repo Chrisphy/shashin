@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="shashin.Views.unsplashSearchPhotos"
+    xmlns:local="clr-namespace:shashin.ViewModels; assembly=shashin"
+             Title="Search Results">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.BindingContext>
+                <local:unsplashSearchViewModel/>
+            </StackLayout.BindingContext>
+            <ListView x:Name="mySearchList" ItemsSource="{Binding ListPhoto}" HasUnevenRows="true" RowHeight="-1" ItemSelected="Handle_ItemSelected" SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Image Aspect="AspectFill" Source="{Binding Urls.Regular}" />  
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
