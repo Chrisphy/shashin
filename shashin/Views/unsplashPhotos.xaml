@@ -7,7 +7,7 @@
                 <local:unsplashViewModel/>
             </StackLayout.BindingContext>
             <StackLayout Orientation="Vertical">
-                <SearchBar x:Name="searchPhoto" Placeholder="Search"></SearchBar>
+                <SearchBar x:Name="searchPhoto" Placeholder="Search for photos" SearchButtonPressed="Handle_SearchButtonPressed"></SearchBar>
             </StackLayout>
                 <ListView x:Name="myPhotoList" ItemsSource="{Binding ListPhoto}" HasUnevenRows="true" RowHeight="-1" ItemSelected="Handle_ItemSelected" SeparatorVisibility="None">
                     <ListView.ItemTemplate>

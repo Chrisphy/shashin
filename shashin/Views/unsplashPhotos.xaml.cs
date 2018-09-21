@@ -34,5 +34,23 @@ namespace shashin.Views
 
             }
         }
+
+        void Handle_SearchButtonPressed(object sender, System.EventArgs e)
+        {
+            string tmpString = searchPhoto.Text.Trim();
+            if (!string.IsNullOrEmpty(tmpString))
+            {
+                unsplashSearchViewModel.searchString = tmpString;
+                //DisplayAlert("Searching", unsplashSearchViewModel.searchString, "OK");
+
+                var SearchPhotoView = new unsplashSearchViewModel();
+                //myPhotoList.ItemsSource = null;
+                //this.BindingContext = PhotoViewModel;
+
+                var SearchPhotoPage = new unsplashSearchPhotos();
+                SearchPhotoPage.BindingContext = SearchPhotoView;
+                Navigation.PushAsync(SearchPhotoPage);
+            }
+        }
     }
 }
