@@ -5,39 +5,15 @@
     <ContentPage.Content>
     <StackLayout>
 
-    <!--
-            <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10">
-                                <Label Text="{Binding Text}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
-                                <Label Text="{Binding Description}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-     -->
 
-      <Button x:Name="takePhoto" Text="Take Photo"/>
-      <Button x:Name="pickPhoto" Text="Pick Photo"/>
-      <Button x:Name="takeVideo" Text="Take Video"/>
-      <Button x:Name="pickVideo" Text="Pick Video"/>
+      <Button x:Name="takePhoto" Image="camera.png" HorizontalOptions="FillAndExpand"/>
+      <Button x:Name="pickPhoto" Image="gallery.png" HorizontalOptions="FillAndExpand"/>
+
 
       <Image x:Name="image"/>
 
-      <!--      <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" HasUnevenRows="true" RowHeight="-1">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell >
-                                <Image Aspect="AspectFill" Source="xamarin_logo@3x.png" />  
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            
 
-            -->
 
             
         </StackLayout>

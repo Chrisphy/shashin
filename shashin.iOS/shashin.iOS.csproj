@@ -124,7 +124,10 @@
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\tab_settings.png" />
-    <BundleResource Include="Resources\Images\image1.png" />
+    <BundleResource Include="Resources\gallery.png" />
+    <BundleResource Include="Resources\camera.png" />
+    <BundleResource Include="Resources\tab_camera.png" />
+    <BundleResource Include="Resources\tab_gallery.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

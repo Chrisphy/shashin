@@ -9,12 +9,6 @@ namespace shashin.Views
     {
         public TipsPage()
         {
-            Label header = new Label
-            {
-                Text = "Tips & Tricks",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-                HorizontalOptions = LayoutOptions.Center
-            };
 
             WebView webView = new WebView
             {
@@ -30,7 +24,6 @@ namespace shashin.Views
             {
                 Children =
                 {
-                    header,
                     webView
                 }
             };

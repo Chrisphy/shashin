@@ -13,7 +13,6 @@
                     <Label Text="{Binding UserName}"/>
                     <Label Text="Description:"/>
                     <Label Text="{Binding PhotoDescription}"/>
-                    <Button Text="Save" x:Name="saveButton" Clicked="saveImage" />
                 </StackLayout>
             </ScrollView>
         </ContentPage.Content>
